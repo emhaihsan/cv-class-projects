@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .input-section, .processing-section, .result-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #preview, #result {
+            max-width: 100%;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Processing App</h1>
+    
+    <div class="input-section">
+        <h2>Upload Image</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <img id="preview" src="" alt="Preview gambar">
+    </div>
+    
+    <div class="processing-section">
+        <h2>Crop Gambar</h2>
+        <input type="number" id="cropX" placeholder="X" value="0">
+        <input type="number" id="cropY" placeholder="Y" value="0">
+        <input type="number" id="cropWidth" placeholder="Lebar" value="100">
+        <input type="number" id="cropHeight" placeholder="Tinggi" value="100">
+        <button onclick="cropImage()">Crop</button>
+    
+        <h2>Grayscale</h2>
+        <button onclick="grayscaleImage()">Convert to Grayscale</button>
+    
+        <h2>Convolution</h2>
+        <button onclick="convolveImage()">Convolve</button>
+    </div>
+    
+    <div class="result-section">
+        <h2>Result</h2>
+        <img id="result" src="" alt="Hasil pengolahan gambar">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
